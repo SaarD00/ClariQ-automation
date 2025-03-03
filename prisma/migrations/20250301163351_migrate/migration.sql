@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "TodoList" ALTER COLUMN "title" DROP NOT NULL,
+ALTER COLUMN "createdAt" DROP NOT NULL,
+ALTER COLUMN "updatedAt" DROP NOT NULL;
