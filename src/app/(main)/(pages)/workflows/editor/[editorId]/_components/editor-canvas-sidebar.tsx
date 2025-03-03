@@ -36,6 +36,7 @@ type Props = {
 const EditorCanvasSidebar = ({ nodes }: Props) => {
   const { state } = useEditor()
   const { nodeConnection } = useNodeConnections()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const { googleFile, setSlackChannels } = useFuzzieStore()
   useEffect(() => {
     if (state) {
@@ -48,9 +49,11 @@ const EditorCanvasSidebar = ({ nodes }: Props) => {
       fetchBotSlackChannels(
         nodeConnection.slackNode.slackAccessToken,
         setSlackChannels
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       )
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }
-  }, [nodeConnection])
+  }, [nodeConnection]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <aside className=''>

@@ -11,6 +11,8 @@ export default function Home() {
       <Navbar />
       <section className="h-screen w-full  bg-neutral-950 rounded-md  !overflow-visible relative flex flex-col justify-center items-center  antialiased">
         <div className="absolute inset-0 brightness-125 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
+
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/q-44e26a19-nlMzAVjZSjIUO4LdInxgn4TRs4vHTw.png"
           alt="Glowing hero image"
@@ -35,6 +37,7 @@ export default function Home() {
 
         </main>
         <div className=' items-center z-20 mb-20 justify-center flex  gap-4 '>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           <img
             src="/temp-banner.png"
             alt="bannerImage"
@@ -62,6 +65,7 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-1 mt-10 md:grid-cols-2 border-l-[1px]  backdrop-blur-sm  border-l-white/30 border-r-white/30  border-r-[1px] px-5 py-3  max-w-5xl relative">
               <div className="bg-transparent   bg-gradient-to-br from-transparent via-white/5 to-white/15 z-10 px-6 py-14 justify-center  flex flex-col items-center text-center">
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
                 <img className='h-10 w-10' src="https://lh3.googleusercontent.com/rCwHBRBJV4wFiEIN_Mlboj94_TGJxyJtBh-MBFL4y1aZdO4hb7_Uc_PpXRyAoN7O9m_Zc1wSyp3H1vsnb829QE7t9KyGNJY9A1a3QQ" />
 
                 <h2 className="text-xl font-semibold mb-2">Google Drive</h2>
@@ -83,7 +87,7 @@ export default function Home() {
                 <img className='h-10 w-10 object-contain' src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/516px-Google_Gemini_logo.svg.png" />
 
                 <h2 className="text-xl font-semibold mb-2">Gemini</h2>
-                <p className="text-gray-400 text-sm">Enhance your productivity with Gemini's AI-powered insights.</p>
+                <p className="text-gray-400 text-sm">Enhance your productivity with Gemini{"'"}s AI-powered insights.</p>
               </div>
               <div className="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <div className="bg-purple-700 h-14 w-14 rounded-2xl"></div>

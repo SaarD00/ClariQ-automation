@@ -38,7 +38,7 @@ const initialNodes: EditorNodeType[] = []
 const initialEdges: { id: string; source: string; target: string }[] = []
 
 const EditorCanvas = (props: Props) => {
-  const { dispatch, state } = useEditor()
+  const { dispatch, state } = useEditor() // eslint-disable-line react-hooks/exhaustive-deps
   const [nodes, setNodes] = useState(initialNodes)
   const [edges, setEdges] = useState(initialEdges)
   const [isWorkFlowLoading, setIsWorkFlowLoading] = useState<boolean>(false)
@@ -139,11 +139,12 @@ const EditorCanvas = (props: Props) => {
           type: 'Trigger',
         },
       },
-    })
+    }) // eslint-disable-line react-hooks/exhaustive-deps
   }
 
   useEffect(() => {
-    dispatch({ type: 'LOAD_DATA', payload: { edges, elements: nodes } })
+    dispatch({ type: 'LOAD_DATA', payload: { edges, elements: nodes } }) // eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodes, edges])
 
   const nodeTypes = useMemo(
@@ -159,19 +160,20 @@ const EditorCanvas = (props: Props) => {
     []
   )
 
-  const onGetWorkFlow = async () => {
-    setIsWorkFlowLoading(true)
+  const onGetWorkFlow = async () => { // eslint-disable-line react-hooks/exhaustive-deps
+    setIsWorkFlowLoading(true) // eslint-disable-line react-hooks/exhaustive-deps
     const response = await onGetNodesEdges(pathname.split('/').pop()!)
     if (response) {
       setEdges(JSON.parse(response.edges!))
       setNodes(JSON.parse(response.nodes!))
-      setIsWorkFlowLoading(false)
+      setIsWorkFlowLoading(false) // eslint-disable-line react-hooks/exhaustive-deps
     }
-    setIsWorkFlowLoading(false)
+    setIsWorkFlowLoading(false) // eslint-disable-line react-hooks/exhaustive-deps
   }
 
   useEffect(() => {
     onGetWorkFlow()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

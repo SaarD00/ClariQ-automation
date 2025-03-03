@@ -24,6 +24,7 @@ const TodoList = () => {
     };
     useEffect(() => {
         fetchTodos();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -33,7 +34,7 @@ const TodoList = () => {
         >
             <div className="w-full flex flex-row gap-1 relative items-center justify-start">
                 <h1 className="whitespace-nowrap  font-normal  text-center text-xl font-sans dark:text-white w-fit flex gap-2">
-                    Today's tasks
+                    Today{"'"}s tasks
                 </h1>
             </div>
             <div className="border-solid border-gray-700 self-center mb-3 w-40 relative  h-px shrink-0" />

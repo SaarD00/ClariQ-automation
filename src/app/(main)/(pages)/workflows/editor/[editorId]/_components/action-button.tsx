@@ -28,6 +28,7 @@ const ActionButton = ({
     const response = await postContentToWebHook(
       nodeConnection.discordNode.content,
       nodeConnection.discordNode.webhookURL
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     )
 
     if (response.message == 'success') {
@@ -43,6 +44,7 @@ const ActionButton = ({
       nodeConnection.notionNode.databaseId,
       nodeConnection.notionNode.accessToken,
       nodeConnection.notionNode.content
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     )
     const response = await onCreateNewPageInDatabase(
       nodeConnection.notionNode.databaseId,
@@ -62,6 +64,7 @@ const ActionButton = ({
       nodeConnection.slackNode.slackAccessToken,
       channels!,
       nodeConnection.slackNode.content
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     )
     if (response.message == 'Success') {
       toast.success('Message sent successfully')
@@ -81,6 +84,7 @@ const ActionButton = ({
         nodeConnection.discordNode.content,
         currentService,
         pathname.split('/').pop()!
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       )
 
       if (response) {

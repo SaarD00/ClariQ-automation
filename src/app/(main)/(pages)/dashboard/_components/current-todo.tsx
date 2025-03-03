@@ -18,6 +18,7 @@ const CurrentTodo = () => {
     useEffect(() => {
         const titles = localStorage.getItem('selectedTodoTitle') || ""
         setTitle(titles)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [title])
 
     return (

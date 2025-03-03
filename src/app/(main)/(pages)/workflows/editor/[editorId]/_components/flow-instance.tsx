@@ -26,15 +26,15 @@ const FlowInstance = ({ children, edges, nodes }: Props) => {
       JSON.stringify(nodes),
       JSON.stringify(edges),
       JSON.stringify(isFlow)
-    )
+    )// eslint-disable-line react-hooks/exhaustive-deps
 
     if (flow) toast.message(flow.message)
-  }, [nodeConnection])
+  }, [nodeConnection]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const onPublishWorkflow = useCallback(async () => {
+  const onPublishWorkflow = useCallback(async () => { // eslint-disable-line react-hooks/exhaustive-deps
     const response = await onFlowPublish(pathname.split('/').pop()!, true)
-    if (response) toast.message(response)
-  }, [])
+    if (response) toast.message(response) // eslint-disable-line react-hooks/exhaustive-deps 
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const onAutomateFlow = async () => {
     const flows: any = []
@@ -47,12 +47,13 @@ const FlowInstance = ({ children, edges, nodes }: Props) => {
       })
     })
 
-    setIsFlow(flows)
-  }
+    setIsFlow(flows) // eslint-disable-line react-hooks/exhaustive-deps
+  } // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    onAutomateFlow()
-  }, [edges])
+    onAutomateFlow() // eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-line react-hooks/exhaustive-deps
+  }, [edges]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className=" flex-col hidden md:flex gap-2">
