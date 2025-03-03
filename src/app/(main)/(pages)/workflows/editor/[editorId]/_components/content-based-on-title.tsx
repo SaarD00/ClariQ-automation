@@ -64,10 +64,8 @@ const ContentBasedOnTitle = ({
       } else {
         toast.error('Something went wrong')
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }
     reqGoogle()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // @ts-ignore

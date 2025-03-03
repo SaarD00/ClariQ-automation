@@ -1,5 +1,6 @@
 'use server'
 
+import { Option } from '@/components/ui/multiple-selector'
 import { db } from '@/lib/db'
 import { currentUser } from '@clerk/nextjs'
 import axios from 'axios'
@@ -52,13 +53,12 @@ export const getSlackConnection = async () => {
 
 export async function listBotChannels(
   slackAccessToken: string
-): Promise<[]> {
+): Promise<Option[]> {
   const url = `https://slack.com/api/conversations.list?${new URLSearchParams({
     types: 'public_channel,private_channel',
     limit: '200',
   })}`
   // Rate limit to avoid hitting Slack API rate limits
-  await new Promise((resolve) => setTimeout(resolve, 1000))
   try {
     const { data } = await axios.get(url, {
       headers: { Authorization: `Bearer ${slackAccessToken}` },
@@ -109,7 +109,7 @@ const postMessageInSlackChannel = async (
 // Wrapper function to post messages to multiple Slack channels
 export const postMessageToSlack = async (
   slackAccessToken: string,
-  selectedSlackChannels: { label: string; value: string }[],
+  selectedSlackChannels: Option[],
   content: string
 ): Promise<{ message: string }> => {
   if (!content) return { message: 'Content is empty' }
