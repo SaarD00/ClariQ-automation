@@ -6,6 +6,8 @@ import { ClerkProvider } from '@clerk/nextjs'
 import ModalProvider from '@/providers/modal-provider'
 import { Toaster } from '@/components/ui/sonner'
 import { BillingProvider } from '@/providers/billing-provider'
+import Script from 'next/script'
+import AdSense from '@/components/global/AdSense'
 
 const font = DM_Sans({ subsets: ['latin'] })
 
@@ -24,7 +26,11 @@ export default function RootLayout({
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
       <html lang="en">
+        <head>
+          <AdSense pId={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || ""} />
+        </head>
         <body className={font.className}>
+
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
