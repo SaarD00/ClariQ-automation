@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Allow: /ads.txt
+Disallow: /privacy-policy
+Sitemap: https://clariq.vercel.app/sitemap.xml
