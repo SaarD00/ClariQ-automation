@@ -27,7 +27,9 @@ export default function RootLayout({
     >
       <html lang="en">
         <head>
-          <AdSense pId={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || ""} />
+          <meta name="google-adsense-account" content="ca-pub-9081019223186749">
+            <AdSense pId={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || ""} />
+          </meta>
         </head>
         <body className={font.className}>
 
